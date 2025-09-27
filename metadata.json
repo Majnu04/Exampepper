@@ -1,0 +1,5 @@
+{
+  "name": "Exam Preparation Assistant",
+  "description": "An AI-powered tutor that helps you prepare for exams by explaining concepts, providing structured answers, and offering revision notes based on your questions.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="AI-powered exam preparation assistant for clear, concise, and focused learning" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Exam Preparation Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'bounce-slow': 'bounce 2s infinite',
+              'fade-in': 'fadeIn 1s ease-out',
+              'fade-in-up': 'fadeInUp 1s ease-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'slide-in-right': 'slideInRight 0.8s ease-out',
+              'float': 'float 3s ease-in-out infinite'
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #facc15, 0 0 10px #facc15, 0 0 15px #facc15' },
+                '100%': { boxShadow: '0 0 10px #facc15, 0 0 20px #facc15, 0 0 30px #facc15' }
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(50px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' }
+              }
+            },
+            screens: {
+              'xs': '475px'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1f2937;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #facc15;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #fbbf24;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Touch-friendly interactions */
+      * {
+        -webkit-tap-highlight-color: rgba(250, 204, 21, 0.2);
+      }
+      
+      /* Better focus states for keyboard navigation */
+      button:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #facc15;
+        outline-offset: 2px;
+      }
+      
+      /* Prevent text selection on buttons */
+      button {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      
+      /* Dynamic gradient background */
+      body {
+        background: linear-gradient(-45deg, #000000, #111111, #1a1a1a, #000000);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+      }
+      
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      /* Typing cursor effect */
+      .typing-cursor::after {
+        content: '|';
+        animation: blink 1s infinite;
+        color: #facc15;
+      }
+      
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      
+      /* Particle effect helper */
+      .particle {
+        position: absolute;
+        background: #facc15;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0.6;
+        animation: particleFloat 4s ease-in-out infinite;
+      }
+      
+      @keyframes particleFloat {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+        50% { transform: translateY(-20px) scale(1.1); opacity: 0.8; }
+      }
+      
+      /* Hover glow effects */
+      .glow-on-hover:hover {
+        box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+        transition: box-shadow 0.3s ease;
+      }
+      
+      /* Text shimmer effect */
+      .text-shimmer {
+        background: linear-gradient(90deg, #facc15, #ffffff, #facc15);
+        background-size: 200% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s ease-in-out infinite;
+      }
+      
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-black">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
