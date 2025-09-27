@@ -1,0 +1,140 @@
+/* Mobile-specific styles and enhancements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, input, textarea, select {
+    min-height: 44px;
+  }
+  
+  /* Better scrolling on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Prevent text selection on mobile UI elements */
+  .mobile-ui-element {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  
+  /* Better mobile tap highlights */
+  * {
+    -webkit-tap-highlight-color: rgba(255, 193, 7, 0.3);
+    -webkit-focus-ring-color: rgba(255, 193, 7, 0.3);
+  }
+  
+  /* Improve mobile animations */
+  @keyframes mobile-bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0, -8px, 0);
+    }
+    70% {
+      transform: translate3d(0, -4px, 0);
+    }
+    90% {
+      transform: translate3d(0, -2px, 0);
+    }
+  }
+  
+  .mobile-bounce {
+    animation: mobile-bounce 1s ease-in-out infinite;
+  }
+  
+  /* Better mobile text readability */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Improve mobile scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(75, 85, 99, 0.1);
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.5);
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 36, 0.8);
+  }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 896px) and (orientation: landscape) {
+  .landscape-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .landscape-header {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Touch-friendly animations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-scale {
+    transition: transform 0.2s ease-out;
+  }
+  
+  .touch-scale:active {
+    transform: scale(0.95);
+  }
+  
+  /* Disable complex hover effects on touch devices */
+  .hover-effect:hover {
+    transform: none;
+  }
+}
+
+/* Safe area adjustments for notched devices */
+@supports(padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-left {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+  }
+  
+  .safe-area-right {
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 640px) {
+  .performance-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

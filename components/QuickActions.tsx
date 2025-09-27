@@ -20,24 +20,24 @@ const QuickActionButton: React.FC<QuickActionButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`w-full relative bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-gray-600/70 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 animate-fade-in-up group text-left hover:scale-105 transform active:scale-95 overflow-hidden`}
+      className={`w-full relative bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 hover:border-gray-600/70 transition-all duration-500 hover:shadow-2xl hover:shadow-white/10 animate-fade-in-up group text-left hover:scale-105 transform active:scale-95 overflow-hidden touch-manipulation min-h-[100px] sm:min-h-[120px]`}
       style={{ animationDelay: delay }}
     >
       {/* Gradient overlay */}
       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
       
-      <div className="relative z-10 flex items-start space-x-6">
+      <div className="relative z-10 flex items-start space-x-3 sm:space-x-4 lg:space-x-6">
         <div className="relative">
           <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity duration-500`}></div>
-          <div className="relative text-3xl sm:text-4xl group-hover:scale-125 transition-transform duration-500 flex-shrink-0 p-2">
+          <div className="relative text-2xl sm:text-3xl lg:text-4xl group-hover:scale-125 transition-transform duration-500 flex-shrink-0 p-1 sm:p-2">
             {emoji}
           </div>
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-bold text-white text-lg sm:text-xl mb-2 group-hover:text-yellow-300 transition-colors duration-500">
+          <h4 className="font-bold text-white text-base sm:text-lg lg:text-xl mb-1 sm:mb-2 group-hover:text-yellow-300 transition-colors duration-500">
             {title}
           </h4>
-          <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
+          <p className="text-gray-400 text-xs sm:text-sm lg:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
             {description}
           </p>
         </div>
@@ -106,7 +106,7 @@ const QuickActions: React.FC<{ setTopic: (topic: string) => void }> = ({ setTopi
         </p>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {quickActions.map((action, index) => (
           <QuickActionButton
             key={index}

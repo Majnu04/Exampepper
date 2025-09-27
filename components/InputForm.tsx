@@ -55,7 +55,7 @@ const InputForm: React.FC<InputFormProps> = ({ topic, setTopic, onSubmit, isLoad
       </form>
 
       {/* Mobile Version */}
-      <form onSubmit={onSubmit} className="block sm:hidden space-y-6 animate-slide-up">
+      <form onSubmit={onSubmit} className="block sm:hidden space-y-4 animate-slide-up">
         <div className="relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 via-blue-400/10 to-purple-400/10 rounded-2xl blur-lg opacity-0 group-focus-within:opacity-100 transition-opacity duration-700"></div>
           
@@ -64,8 +64,8 @@ const InputForm: React.FC<InputFormProps> = ({ topic, setTopic, onSubmit, isLoad
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               placeholder="✨ What would you like to learn today?"
-              className="w-full p-6 text-lg rounded-xl border-none bg-transparent text-white placeholder-gray-400 focus:ring-0 focus:outline-none resize-none transition-all duration-500 font-medium min-h-[120px]"
-              rows={5}
+              className="w-full p-4 text-base rounded-xl border-none bg-transparent text-white placeholder-gray-400 focus:ring-0 focus:outline-none resize-none transition-all duration-500 font-medium min-h-[100px] touch-manipulation"
+              rows={4}
               disabled={isLoading}
             />
           </div>
@@ -74,14 +74,14 @@ const InputForm: React.FC<InputFormProps> = ({ topic, setTopic, onSubmit, isLoad
         <button
           type="submit"
           disabled={isLoading || !topic.trim()}
-          className="w-full flex items-center justify-center gap-4 h-16 px-8 font-bold text-black bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 rounded-2xl hover:from-yellow-300 hover:via-yellow-200 hover:to-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-400/50 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-500 shadow-2xl hover:shadow-yellow-400/40 active:scale-95 group text-lg"
+          className="w-full flex items-center justify-center gap-3 h-14 px-6 font-bold text-black bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 rounded-2xl hover:from-yellow-300 hover:via-yellow-200 hover:to-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-400/50 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed transition-all duration-500 shadow-2xl hover:shadow-yellow-400/40 active:scale-95 group text-base touch-manipulation"
         >
           {isLoading ? (
             <span className="animate-pulse">Generating...</span>
           ) : (
             <>
               <span className="font-black">Generate Study Guide</span>
-              <PaperAirplaneIcon className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+              <PaperAirplaneIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </>
           )}
         </button>

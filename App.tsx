@@ -59,22 +59,22 @@ const App: React.FC = () => {
         <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/6 to-purple-400/6 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-r from-green-400/6 to-teal-400/6 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
       </div>
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 max-w-7xl relative z-10">
-        <header className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in-up">
-          <div className="bg-gradient-to-r from-transparent via-gray-900/20 to-transparent rounded-3xl p-8 sm:p-12 mb-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+      <main className="container mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12 max-w-7xl relative z-10">
+        <header className="text-center mb-8 sm:mb-16 lg:mb-20 animate-fade-in-up">
+          <div className="bg-gradient-to-r from-transparent via-gray-900/20 to-transparent rounded-2xl sm:rounded-3xl p-6 sm:p-12 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-4 sm:mb-8">
               <div className="relative">
                 <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
-                <BookOpenIcon className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-yellow-400 relative z-10 drop-shadow-2xl hover:scale-110 transition-all duration-500 hover:text-yellow-300" />
+                <BookOpenIcon className="w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-yellow-400 relative z-10 drop-shadow-2xl hover:scale-110 transition-all duration-500 hover:text-yellow-300" />
               </div>
               <div className="text-center sm:text-left">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-400 bg-clip-text text-transparent leading-tight hover:scale-105 transition-transform duration-500 cursor-default">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-400 bg-clip-text text-transparent leading-tight hover:scale-105 transition-transform duration-500 cursor-default">
                   Exam Prep AI
                 </h1>
-                <div className="h-1 w-32 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto sm:mx-0 mt-4 rounded-full"></div>
+                <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto sm:mx-0 mt-3 sm:mt-4 rounded-full"></div>
               </div>
             </div>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 font-light px-4 sm:px-0 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+            <p className="text-base sm:text-xl lg:text-2xl text-gray-200 font-light px-2 sm:px-0 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               Transform your study sessions with AI-powered explanations, personalized learning paths, and comprehensive exam preparation.
             </p>
           </div>
@@ -92,7 +92,7 @@ const App: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 lg:gap-10 mb-8 sm:mb-16">
               <FeatureCard
                 icon={<AcademicCapIcon />}
                 title="Expert Explanations"
@@ -136,9 +136,9 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 sm:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-8 lg:gap-10">
             {/* Main Content */}
-            <div className="xl:col-span-3 space-y-8 sm:space-y-10">
+            <div className="lg:col-span-3 xl:col-span-3 space-y-6 sm:space-y-10">
               {isLoading && (
               <div className="flex flex-col items-center justify-center text-center p-6 sm:p-8 lg:p-10 bg-gray-900 rounded-xl sm:rounded-2xl border-2 border-yellow-400 mx-2 sm:mx-0 animate-slide-up shadow-2xl">
                 <LoadingSpinner />
@@ -179,11 +179,11 @@ const App: React.FC = () => {
             </div>
             
             {/* Enhanced Sidebar */}
-            <div className="xl:col-span-1 space-y-8 sm:space-y-10">
-              <div className="sticky top-8">
+            <div className="lg:col-span-1 xl:col-span-1 space-y-4 sm:space-y-8 lg:space-y-10">
+              <div className="lg:sticky lg:top-8">
                 <ProgressTracker />
                 {studyHistory.length > 0 && (
-                  <div className="mt-8">
+                  <div className="mt-4 sm:mt-6 lg:mt-8">
                     <StudyHistory 
                       history={studyHistory} 
                       onSelectTopic={setTopic} 
